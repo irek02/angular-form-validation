@@ -4,13 +4,13 @@
     E-mail:
     <input type="text" formControlName="email">
   </label>
-
   <br>
-
-  <label>
-    Site name:
-    <input type="text" formControlName="siteName">
-  </label>
+  <span
+    *ngIf="signUpForm.touched && signUpForm.get('email').hasError('required')">Email
+    required!</span>
+  <span
+    *ngIf="signUpForm.touched && signUpForm.get('email').hasError('email')">Must
+    be in email format!</span>
 
   <br>
 
