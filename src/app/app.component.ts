@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-form-validation';
+
+  signUpForm = this.fb.group({
+    email: ['', [Validators.email, Validators.required]],
+    siteName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(5)]],
+  });
+
+  constructor(private fb: FormBuilder) { }
+
+  onSubmit() {
+    console.log(this.signUpForm.value);
+  }
+
 }
