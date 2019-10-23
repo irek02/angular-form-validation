@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +9,8 @@ import { Validators } from '@angular/forms';
 export class AppComponent {
 
   signUpForm = this.fb.group({
-    email: ['', [Validators.email, Validators.required]],
-    siteName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(5)]],
+    email: [''],
+    siteName: [''],
   });
 
   constructor(private fb: FormBuilder) { }
