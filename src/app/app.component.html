@@ -7,6 +7,13 @@
 
   <br>
 
-  <button type="submit">Register</button>
+  <span
+    *ngIf="signUpForm.get('email').hasError('email')">must be
+    in email format!</span>
+
+  <br>
+
+  <button type="submit"
+    [disabled]="!signUpForm.valid">Register</button>
 
 </form>
