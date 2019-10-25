@@ -9,8 +9,7 @@ import { FormBuilder } from '@angular/forms';
 export class AppComponent {
 
   signUpForm = this.fb.group({
-    email: [''],
-    siteName: [''],
+    email: ['']
   });
 
   constructor(private fb: FormBuilder) { }
